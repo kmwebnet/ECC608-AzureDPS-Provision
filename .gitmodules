@@ -1,0 +1,6 @@
+[submodule "lib/esp-azure"]
+	path = lib/esp-azure
+	url = https://github.com/espressif/esp-azure.git
+[submodule "src/cryptoauthlib"]
+	path = src/cryptoauthlib
+	url = https://github.com/MicrochipTech/cryptoauthlib.git
