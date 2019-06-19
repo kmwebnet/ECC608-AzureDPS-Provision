@@ -48,6 +48,8 @@ At first, you need to create self-signed CA chain by using python scripts step-b
 2, convert their extension from .crt to .pem to upload Azure IoT DPS certificate registration.  
 3, you need to verify them follow the steps described by Azure IoT DPS.
 
+If you don't make sense this topic, please step back to [ECC608-Provision](https://github.com/kmwebnet/ECC608-Provision).  
+
 # Result
 
 If you run this project with success, you can find the results on serial console as follows:
