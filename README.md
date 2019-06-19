@@ -38,6 +38,7 @@ static const char* id_scope = "";
 
 # Usage
 
+Once you do git clone, you need to execute "git submodule update --init --recursive"  
 you need to change a serial port number which actually connected to ESP32 in platformio.ini.
 
 # Run this project
