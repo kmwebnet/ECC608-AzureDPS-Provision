@@ -34,7 +34,7 @@ static const char* id_scope = "";
       I2C 1 SDA GPIO_NUM_21
       I2C 1 SCL GPIO_NUM_22
           
-  Microchip ATECC608(on I2C port 1)
+  Microchip ATECC608A(on I2C port 1)
 
 # Usage
 
