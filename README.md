@@ -46,6 +46,16 @@ you need to change a serial port number which actually connected to ESP32 in pla
 At first, you need to create self-signed CA chain by using python scripts step-by-step in "scripts" folder for test purpose.  
 1, create root-ca.crt and signer-ca.crt  
 2, convert their extension from .crt to .pem to upload Azure IoT DPS certificate registration.  
+
+this is an example scripts for root cert registration as follows:  
+
+openssl ecparam -name prime256v1 -genkey > azureroot.key
+openssl req -new -sha256 -key azureroot.key -subj "/C=JP/ST=Tokyo/L=Tokyo/O=test/OU=test/CN=<confirmation code from Azure DPS>" -out azureroot.csr
+
+openssl x509 -req -in azureroot.csr -CA root-ca.pem -CAkey root-ca.key -CAcreateserial -out azureroot.pem -days 3650 -sha256
+
+you can register signer-ca as well.  
+
 3, you need to verify them follow the steps described by Azure IoT DPS.
 
 If you don't make sense this topic, please step back to [ECC608-Provision](https://github.com/kmwebnet/ECC608-Provision).  
