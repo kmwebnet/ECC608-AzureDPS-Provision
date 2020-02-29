@@ -16,7 +16,7 @@
 #include "azure_c_shared_utility/agenttime.h"
 #include "azure_c_shared_utility/xlogging.h"
 
-#include "../lwip/apps/sntp/sntp.h"
+#include "lwip/apps/sntp.h"
 
 void initialize_sntp(void)
 {
