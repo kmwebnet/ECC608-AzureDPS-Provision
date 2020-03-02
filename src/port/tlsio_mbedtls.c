@@ -463,6 +463,13 @@ static void mbedtls_init(TLS_IO_INSTANCE *tls_io_instance)
     mbedtls_ctr_drbg_init(&tls_io_instance->ctr_drbg);
     mbedtls_ctr_drbg_seed(&tls_io_instance->ctr_drbg, mbedtls_entropy_func, &tls_io_instance->entropy, (const unsigned char *)pers, strlen(pers));
 
+    // Set the allowed curves in order of preference.
+    static const mbedtls_ecp_group_id curve[] =
+    {
+        MBEDTLS_ECP_DP_SECP256R1, MBEDTLS_ECP_DP_NONE
+    };
+    mbedtls_ssl_conf_curves(&tls_io_instance->config, curve);	
+	
     mbedtls_ssl_config_init(&tls_io_instance->config);
     mbedtls_ssl_config_defaults(&tls_io_instance->config, MBEDTLS_SSL_IS_CLIENT, MBEDTLS_SSL_TRANSPORT_STREAM, MBEDTLS_SSL_PRESET_DEFAULT);
     mbedtls_ssl_conf_rng(&tls_io_instance->config, mbedtls_ctr_drbg_random, &tls_io_instance->ctr_drbg);
