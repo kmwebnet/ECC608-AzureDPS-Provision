@@ -49,10 +49,12 @@ At first, you need to create self-signed CA chain by using python scripts step-b
 
 this is an example scripts for root cert registration as follows:  
 
+```
 openssl ecparam -name prime256v1 -genkey > azureroot.key  
 openssl req -new -sha256 -key azureroot.key -subj "/C=JP/ST=Tokyo/L=Tokyo/O=test/OU=test/CN=<confirmation code from Azure DPS>" -out azureroot.csr  
 
 openssl x509 -req -in azureroot.csr -CA root-ca.pem -CAkey root-ca.key -CAcreateserial -out azureroot.pem -days 3650 -sha256  
+```
 
 you can register signer-ca as well.    
 
