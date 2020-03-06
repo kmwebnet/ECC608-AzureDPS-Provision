@@ -60,7 +60,8 @@ you can register signer-ca as well.
 
 3, you need to verify them follow the steps described by Azure IoT DPS.
 
-If you don't make sense this topic, please step back to [ECC608-Provision](https://github.com/kmwebnet/ECC608-Provision).  
+If you don't make sense this topic, check azure DPS setup step by step.docx or,  
+please step back to [ECC608-Provision](https://github.com/kmwebnet/ECC608-Provision).  
 
 # Result
 
