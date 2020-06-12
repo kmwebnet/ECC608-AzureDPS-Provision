@@ -6,9 +6,9 @@ This registers device certificate to Azure IoT DPS service and prepares for conn
 
   Platformio with VS Code environment.
   install "Espressif 32" platform definition on Platformio  
-  Prior to compile this project, you need to configure ATECC608A with [ECC608-Configure](https://github.com/kmwebnet/ECC608-Configure)   
+  Prior to compile this project, you need to configure ATECC608A with [ECC608-MassProvisioning](https://github.com/kmwebnet/ECC608-MassProvosioning)   
   to enable IO protection key feature correctly.   
-  and you must copy "cert_chain.c", which is made by privious step [ECC608-Provision](https://github.com/kmwebnet/ECC608-Provision) to "src" folder.  
+  and you must copy "cert_chain.c", which is made by [ECC608-MassProvisioning](https://github.com/kmwebnet/ECC608-MassProvosioning) to "src" folder.  
 
   you need to modify the definition and variables in main.c as follows:  
   ```
@@ -64,7 +64,7 @@ you can register signer-ca as well.
 3, you need to verify them follow the steps described by Azure IoT DPS.
 
 If you don't make sense this topic, check azure DPS setup step by step.docx or,  
-please step back to [ECC608-Provision](https://github.com/kmwebnet/ECC608-Provision).  
+please step back to [ECC608-MassProvisioning](https://github.com/kmwebnet/ECC608-MassProvosioning).  
 
 # Result
 
