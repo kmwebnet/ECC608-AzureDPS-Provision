@@ -343,14 +343,14 @@ int prov_dev_client_ll_sample_run(const char * global_prov_uri , const char * id
 	 {
 	     printf("Failed to init ECC608: %d\r\n", status);
 	 }
-    status = atcab_write_bytes_zone(ATCA_ZONE_DATA, 8 , 0 , (uint8_t *)azureiot , 48 );
+    status = atcab_write_bytes_zone(ATCA_ZONE_DATA, 8 , 20 , (uint8_t *)azureiot , 48 );
 
     if (status != ATCA_SUCCESS) {
 	printf("write azureiot hub URL to slot8 failed with ret=0x%08d/r/n", status);
     }
 
     char verifyresult [48] = {};
-    status = atcab_read_bytes_zone(ATCA_ZONE_DATA, 8 , 0 , (uint8_t *)verifyresult , 48 );
+    status = atcab_read_bytes_zone(ATCA_ZONE_DATA, 8 , 20 , (uint8_t *)verifyresult , 48 );
 
     if (status != ATCA_SUCCESS) {
 	printf("read azureiot hub URL to slot8 failed with ret=0x%08d/r/n", status);
@@ -380,14 +380,14 @@ int prov_dev_client_ll_sample_run(const char * global_prov_uri , const char * id
 	    strcat(serialstr, character);
         }
 
-    status = atcab_write_bytes_zone(ATCA_ZONE_DATA, 8 , 52 , (uint8_t *)serialstr , 20 );
+    status = atcab_write_bytes_zone(ATCA_ZONE_DATA, 8 , 0 , (uint8_t *)serialstr , 20 );
 
     if (status != ATCA_SUCCESS) {
 	printf("write device sn to slot8 failed with ret=0x%08d/r/n", status);
     }
 
     char verifyresult2 [20] = {};
-    status = atcab_read_bytes_zone(ATCA_ZONE_DATA, 8 , 52 , (uint8_t *)verifyresult2 , 20 );
+    status = atcab_read_bytes_zone(ATCA_ZONE_DATA, 8 , 0 , (uint8_t *)verifyresult2 , 20 );
 
     if (status != ATCA_SUCCESS) {
 	printf("read device sn to slot8 failed with ret=0x%08d/r/n", status);
